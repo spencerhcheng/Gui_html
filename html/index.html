@@ -19,8 +19,11 @@
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <!-- Javascript -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="/static/scripts/test.js"></script>
+    <script type="text/babel" src="/static/scripts/test.js"></script>
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="/static/device-mockups/device-mockups.min.css">
 
@@ -62,12 +65,13 @@
             <div class="header-content mx-auto">
               <h1 class="mb-5">Gui helps you find the must visit restaurants in your area.</h1>
               <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Check out restaurants in your area! (COMING SOON)</a>
+
             </div>
           </div>
           <div class="col-lg-5 my-auto">
-            <div class="device-container">
-                  <div class="screen">
-    
+            <div class="device-container" id="root">HI
+<!--     <div class="screen">
+
 		<form id="myForm" action="" method="post">
 		ZIP CODE: <input type="text" name="fname" value=""><br>
 		<select>
@@ -76,25 +80,25 @@
 		  <option value="3">$$$</option>
 		  <option value="4">$$$$</option>
 		</select>
-		</form> 
+		</form>
 <p>Click the "Try it" button to display the value of the first element in the form.</p>
 
 <button onclick="myFunction()">Submit</button>
 
 <p id="zip"></p>
-                <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                 Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else!
                     <img src="" class="img-fluid" alt="">
                   </div>
                   <div class="button">
-                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                  </div>
+                     You can hook the "home button" to some JavaScript events or just remove it
+                  </div> -->
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <section class="features" id="features">
+<!--    <section class="features" id="features">
       <div class="container">
         <div class="section-heading text-center">
           <h2>Upcoming features</h2>
@@ -128,7 +132,7 @@
           </li>
         </ul>
       </div>
-    </section>
+    </section> -->
 
     <footer>
       <div class="container">
