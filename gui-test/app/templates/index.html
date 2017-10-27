@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>  Gui Score </title>
+  </head>
+  <body>
+{% block content %}
+
+ <form action="" method="post" name="post">
+</form>
+
+ <form action="" method="post" name="post">
+
+    <td>Select your price range:</td>
+	{{ form.price(placeholder="--select--") }}
+      <table>
+
+          <tr>
+              <td>Enter your zip code:</td>
+              <td>{{ code.post(size=30, maxlength=140) }}</td>
+              <td>
+              {% for error in code.post.errors %}
+              <span style="color: red;">[{{ error }}]</span><br>
+              {% endfor %}
+              </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td><input type="submit" value="Post!"></td>
+              <td></td>
+          </tr>
+      </table>
+  </form>
+      {% for dict_item in my_list %}
+          {% for key, value in dict_item.items() %}
+      <div><p>{{ key }} says: <b>{{ value }}</b></p></div>
+          {% endfor %}
+      {% endfor %}
+{% endblock %}
+
+  </body>
+</html>
