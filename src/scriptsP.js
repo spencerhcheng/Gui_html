@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import { PriceSelector } from './price.js';
 
 class Main extends React.Component {
   constructor () {
@@ -15,13 +16,7 @@ class Main extends React.Component {
   }
 
   handleClick () {
-    let url;
-    if (this.state.priceQuery === '') {
-    	url = `http://0.0.0.0:5000/search/${this.state.searchQuery}`;
-    } else {
-    	url = `http://0.0.0.0:5000/search/${this.state.searchQuery}/${this.state.priceQuery}`;
-    }
-    axios.get(url)
+    axios.get(`http://0.0.0.0:5000/search/${this.state.searchQuery}`)
 	    .then(response => {
                 // console.log('response', response);
       const restaurants = response.data.map(place => place); // array of dicts or rest
@@ -48,14 +43,12 @@ class Main extends React.Component {
   render () {
 	  console.log('PQ', this.state.priceQuery);
     return (
-      <div className='price-search-div'>
-        <select className='input form-control' value={this.state.priceQuery} onChange={this.handlePrice}>
-          <option value=''>All</option>
+      <div>
+        <select value={this.state.priceQuery} onChange={this.handlePrice}>
+          <option value=''>ALL</option>
           <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-          <option value='4'>4</option>
         </select>
+        //<PriceSelector priceQuery={this.state.priceQuery} />
         <Search
           searchQuery={this.state.searchQuery}
           handleChange={this.handleChange}
@@ -65,6 +58,23 @@ class Main extends React.Component {
 		 );
   }
 }
+
+// class PriceSelector extends React.Component {
+//  render () {
+//	  console.log('PQ', this.props.priceQuery);
+//    return (
+//      <div className='priceSelector'>
+//        <select className='input form-control' priceQuery={this.props.priceQuery} onChange={this.handlePrice}>
+//          <option value='0'>All</option>
+//          <option value='1'>$ 1 - 10</option>
+//          <option value='2'>$$ 11 - 20</option>
+//          <option value='3'>$$$ 21 - 35</option>
+//          <option value='4'>$$$$ 36+</option>
+//        </select>
+//      </div>
+//    );
+//  }
+// }
 
 class Search extends React.Component {
   render () {

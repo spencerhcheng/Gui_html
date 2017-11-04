@@ -9,11 +9,13 @@ export class PriceSelector extends React.Component {
   }
 
   handleChange (e) {
+	  console.log(e);
     this.setState({
       selectValue: e.target.value
     });
   }
   render () {
+	  console.log(this.state.selectValue);
     return (
       <div className='priceSelector'>
         <select className='input form-control'
