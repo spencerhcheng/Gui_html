@@ -22,25 +22,27 @@
 
 .search-input {
   float: left;
-  border: 3px solid #00B4CC;
-  padding: 5px;
-  height: 35px;
+  width: 25.5rem;
+  height: 3.00rem;
   border-radius: 5px;
   outline: none;
   color: #9DBFAF;
+ /* background-color: rgba(255,255,255,0.75); */
+  opacity: 0.7;
+  padding-left: 10px;
 }
 
 .search-input:focus {
  color: #00B4CC;
 }
 
-button {
+.search-button {
   position: absolute;  
   right: -35px;
-  width: 40px;
-  height: 35px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
+  width: 3.50rem;
+  height: 3.00rem;
+  border: 1px solid #ffc63a;
+  background: #ffc63a;
   text-align: center;
   color: #fff;
   border-radius: 5px;
@@ -78,7 +80,7 @@ button {
 }
 
 .one-restaurant:hover {
-  box-shadow: 0 0 11px rgba(128, 128, 128, 1);
+  box-shadow: 0 0 15px rgba(255, 198, 58, 2);
 }
 
 .restaurant-list {

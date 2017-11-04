@@ -1035,6 +1035,7 @@ class Search extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         'div',
         { className: 'search-send' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'search-input',
+          placeholder: 'Search with your zip code',
           type: 'text',
           value: this.props.searchQuery // inverser dataflow
           , onChange: this.props.handleChange }),

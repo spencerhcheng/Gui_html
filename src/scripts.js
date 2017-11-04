@@ -68,6 +68,7 @@ class Search extends React.Component {
       <div className='search'>
         <div className='search-send'>
           <input className='search-input'
+            placeholder='Search with your zip code'
             type='text'
             value={this.props.searchQuery} // inverser dataflow
             onChange={this.props.handleChange} />

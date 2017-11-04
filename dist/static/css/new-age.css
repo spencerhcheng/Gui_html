@@ -58,13 +58,13 @@ section {
   font-weight: 200;
   letter-spacing: 1px; }
   #mainNav .navbar-brand {
-    color: purple;
+    color: #ffc63a; /*#e6eaed*/
     font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
     font-weight: bold;
     font-size: 35px;
     letter-spacing: 1px; }
     #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
-      color: #fcbd20; }
+      color: #e6eaed; }
   #mainNav .navbar-toggler {
     font-size: 12px;
     padding: 8px 10px;
@@ -119,7 +119,7 @@ header.masthead {
   padding-top: 150px;
   padding-bottom: 100px;
   color: white;
-  background: url("../img/background-food-burger.jpg");
+  background: url("../img/background-burger.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   header.masthead .header-content {
