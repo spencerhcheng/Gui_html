@@ -6,7 +6,8 @@
 
 .price-div {
    max-width: 10%!important;
-   margin-left: 25%;
+   margin-left: 15%;
+transform: translate(-50%, -50%);
 }
 .search {
    display: flex;
@@ -77,6 +78,7 @@
   font-weight: bold;
   font-size: 12px;
   text-align: center;
+  opacity: 0.8;
 }
 
 .one-restaurant:hover {
@@ -88,4 +90,6 @@
   padding: 0;
 }
 
-
+.footer-tag {
+  text-align: center;
+}
