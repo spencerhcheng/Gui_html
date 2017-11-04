@@ -11,9 +11,41 @@
 .search {
    display: flex;
    margin-left: 25%;
+   width: 30%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 .search-send {
-  width: 100%;
+  position: relative;
+}
+
+.search-input {
+  float: left;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.search-input:focus {
+ color: #00B4CC;
+}
+
+button {
+  position: absolute;  
+  right: -35px;
+  width: 40px;
+  height: 35px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
 }
 .results {
   padding: 20px 20px 20px 20px;
@@ -46,7 +78,7 @@
 }
 
 .one-restaurant:hover {
-  box-shadow: 0 0 11px rgba(33, 33, 33, .8);
+  box-shadow: 0 0 11px rgba(128, 128, 128, 1);
 }
 
 .restaurant-list {

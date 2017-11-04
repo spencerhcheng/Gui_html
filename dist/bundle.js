@@ -1034,14 +1034,14 @@ class Search extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'search-send' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: 'search-input',
           type: 'text',
           value: this.props.searchQuery // inverser dataflow
           , onChange: this.props.handleChange }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
-          { onClick: this.props.handleClick },
-          'Send'
+          { className: 'search-button', onClick: this.props.handleClick },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-search' })
         )
       )
     );

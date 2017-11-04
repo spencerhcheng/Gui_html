@@ -119,9 +119,9 @@ header.masthead {
   padding-top: 150px;
   padding-bottom: 100px;
   color: white;
-  background: url("../img/bg-pattern.png"), #7b4397;
-  background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
-  background: url("../img/bg-pattern.png"), linear-gradient(to left, #ff4800, #ff9933); }
+  background: url("../img/background-food-burger.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   header.masthead .header-content {
     max-width: 500px;
     margin-bottom: 100px;

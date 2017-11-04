@@ -67,11 +67,11 @@ class Search extends React.Component {
     return (
       <div className='search'>
         <div className='search-send'>
-          <input
+          <input className='search-input'
             type='text'
             value={this.props.searchQuery} // inverser dataflow
             onChange={this.props.handleChange} />
-          <button onClick={this.props.handleClick}>Send</button>
+          <button className='search-button' onClick={this.props.handleClick}><i className='fa fa-search' /></button>
         </div>
       </div>
     );
