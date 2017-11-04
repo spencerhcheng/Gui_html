@@ -48,21 +48,16 @@ class Main extends React.Component {
   render () {
 	  console.log('PQ', this.state.priceQuery);
     return (
-      <div className='price-search-div'>
-        <select className='input form-control' value={this.state.priceQuery} onChange={this.handlePrice}>
-          <option value=''>All</option>
-          <option value='1'>1</option>
-          <option value='2'>2</option>
-          <option value='3'>3</option>
-          <option value='4'>4</option>
-        </select>
+      <div className='price-search-results'>
+        <Price priceQuery={this.state.priceQuery}
+          handlePrice={this.handlePrice} />
         <Search
           searchQuery={this.state.searchQuery}
           handleChange={this.handleChange}
           handleClick={this.handleClick} />
         <Results results={this.state.results} />
       </div>
-		 );
+    );
   }
 }
 
@@ -83,6 +78,22 @@ class Search extends React.Component {
   }
 }
 
+class Price extends React.Component {
+  render () {
+	  console.log('PriceQuery', this.props.priceQuery);
+    return (
+      <div className='price-div'>
+        <select className='input form-control' value={this.props.priceQuery} onChange={this.props.handlePrice}>
+          <option value=''>All</option>
+          <option value='1'>$ 1 - 10</option>
+          <option value='2'>$$ 11 - 20</option>
+          <option value='3'>$$$ 21 - 35</option>
+          <option value='4'>$$$$ 36+</option>
+        </select>
+      </div>
+    );
+  }
+}
 class Results extends React.Component {
   render () {
 	  // console.log('props.results:', this.props.results); //array of dicts

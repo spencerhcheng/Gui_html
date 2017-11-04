@@ -983,7 +983,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     if (this.state.priceQuery === '') {
       url = `http://0.0.0.0:5000/search/${this.state.searchQuery}`;
     } else {
-      url = 'http://0.0.0.0:5000/search/' + this.state.searchQuery + '/' + this.state.priceQuery;
+      url = `http://0.0.0.0:5000/search/${this.state.searchQuery}/${this.state.priceQuery}`;
     }
     axios.get(url).then(response => {
       // console.log('response', response);
@@ -1013,36 +1013,9 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     console.log('PQ', this.state.priceQuery);
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
-      null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'select',
-        { className: 'input form-control', value: this.state.priceQuery, onChange: this.handlePrice },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'option',
-          { value: '' },
-          'All'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'option',
-          { value: '1' },
-          '1'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'option',
-          { value: '2' },
-          '2'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'option',
-          { value: '3' },
-          '3'
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'option',
-          { value: '4' },
-          '4'
-        )
-      ),
+      { className: 'price-search-results' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Price, { priceQuery: this.state.priceQuery,
+        handlePrice: this.handlePrice }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Search, {
         searchQuery: this.state.searchQuery,
         handleChange: this.handleChange,
@@ -1075,6 +1048,44 @@ class Search extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   }
 }
 
+class Price extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+  render() {
+    console.log('PriceQuery', this.props.priceQuery);
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: 'price-div' },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'select',
+        { className: 'input form-control', value: this.props.priceQuery, onChange: this.props.handlePrice },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'option',
+          { value: '' },
+          'All'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'option',
+          { value: '1' },
+          '$ 1 - 10'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'option',
+          { value: '2' },
+          '$$ 11 - 20'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'option',
+          { value: '3' },
+          '$$$ 21 - 35'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'option',
+          { value: '4' },
+          '$$$$ 36+'
+        )
+      )
+    );
+  }
+}
 class Results extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   render() {
     // console.log('props.results:', this.props.results); //array of dicts
