@@ -84,7 +84,7 @@ class Price extends React.Component {
 	  console.log('PriceQuery', this.props.priceQuery);
     return (
       <div className='price-div'>
-        <select className='input form-control' value={this.props.priceQuery} onChange={this.props.handlePrice}>
+        <select className='dropdown' value={this.props.priceQuery} onChange={this.props.handlePrice}>
           <option value=''>All</option>
           <option value='1'>$ 1 - 10</option>
           <option value='2'>$$ 11 - 20</option>
@@ -117,9 +117,11 @@ class Results extends React.Component {
 
 class ResultItem extends React.Component {
   render () {
+	  console.log(this.props.item['image']);
     return (
       <article className='one-restaurant'>
         <ul className='restaurant-list'>
+          <img className='image-restaurant' src={this.props.item['image']} />
           <li>{this.props.item['name']}</li>
           <li>Address: {this.props.item['location']}</li>
           <li>Composite: {this.props.item['composite']}</li>

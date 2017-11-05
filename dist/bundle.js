@@ -1057,7 +1057,7 @@ class Price extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       { className: 'price-div' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'select',
-        { className: 'input form-control', value: this.props.priceQuery, onChange: this.props.handlePrice },
+        { className: 'dropdown', value: this.props.priceQuery, onChange: this.props.handlePrice },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'option',
           { value: '' },
@@ -1108,12 +1108,14 @@ class Results extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
 class ResultItem extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   render() {
+    console.log(this.props.item['image']);
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'article',
       { className: 'one-restaurant' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'ul',
         { className: 'restaurant-list' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'image-restaurant', src: this.props.item['image'] }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'li',
           null,
