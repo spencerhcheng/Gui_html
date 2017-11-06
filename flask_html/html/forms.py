@@ -9,5 +9,5 @@ class zipForm(FlaskForm):
 class dropDown(FlaskForm):
     price = SelectField(
         'Select a price',
-        choices=[('1', '$'), ('2', '$$'), ('3', '$$$'), ('4', '$$$$')]
+        choices=[('0', 'display all'), ('1', '$'), ('2', '$$'), ('3', '$$$'), ('4', '$$$$')]
     )
