@@ -19,9 +19,14 @@ def index():
     print(price)
     print(zip_code)
     try:
-        for listing in db.restaurants.find({'area_code':'{}'.format(zip_code), 'price_range':int('{}'.format(price))}):
-            listing['_id'] = str(listing.get('_id'))
-            my_list.append(listing)
+        if (price != '0'):
+            for listing in db.restaurants.find({'area_code':'{}'.format(zip_code), 'price_range':int('{}'.format(price))}):
+                listing['_id'] = str(listing.get('_id'))
+                my_list.append(listing)
+        else:
+            for listing in db.restaurants.find({'area_code':'{}'.format(zip_code)}):
+                listing['_id'] = str(listing.get('_id'))
+                my_list.append(listing)
     except:
         pass
     print(my_list)
