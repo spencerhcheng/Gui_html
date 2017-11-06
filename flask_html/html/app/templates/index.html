@@ -9,8 +9,12 @@
 
     <title>Gui Score</title>
 
-    <!-- Bootstrap core CSS -->
+	<!-- Bootstrap core CSS -->
     <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+
+	<!-- W3 CSS -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- Custom fonts for this template -->
     <link rel="stylesheet" href="/static/vendor/font-awesome/css/font-awesome.min.css">
@@ -42,7 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#Food Trends">Food Trends</a>
+              <a class="nav-link js-scroll-trigger" href="#features">Food Trends</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#features">Features</a>
@@ -62,32 +66,24 @@
               <h1 class="mb-5">Find the must visit restaurants in your area.</h1>
 <!--              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Check out restaurants in your area! (COMING SOON)</a> -->
 
+<!-- ZIP CODE + PRICE FORM -->
 <form action="" method="post" name="post">
 </form>
 
  <form action="" method="post" name="post">
 
-    <td>Select your price range:</td>
 	{{ form.price(placeholder="--select--") }}
       <table>
 
-          <tr>
-              <td>Enter your zip code:</td>
-              <td>{{ code.post(size=30, maxlength=140) }}</td>
-              <td>
+              {{ code.post(size=30, maxlength=140, placeholder="Enter your zip code") }}
               {% for error in code.post.errors %}
               <span style="color: red;">[{{ error }}]</span><br>
               {% endfor %}
-              </td>
-          </tr>
-          <tr>
-              <td></td>
-              <td><input type="submit" value="Post!"></td>
-              <td></td>
-          </tr>
+              <input type="submit" value="Post!">
       </table>
   </form>
 
+ <!-- End FORMS -->
 
 
             </div>
@@ -109,21 +105,37 @@
         </div>
       </div>
     </header>
-
+    <div class="container">
     <section class="features" id="features">
-      <div class="container">
         <div class="section-heading text-center">
-          <h2>Top restaurants</h2>
-
+          <div class="listings"><h2><!-- Top restaurants--></h2></div>
+    
+	<!-- ZIP CODE + PRICE FORM -->
+	<section class="listings">
 	{% for listing in my_list %}
-      <div><p><b>{{ listing['name'] }}</b></p></div>
-      <div><p>Price:  <b>{{ listing['price'] }}</b></p></div> 
-      <div><p>Composite:  <b>{{ listing['composite'] }}</b></p></div>
-      <div><p>location:  <b>{{ listing['location'] }}</b></p></div>
-      <div><p>zip code:  <b>{{ listing['zip_code'] }}</b></p></div>
-      <div><p>area code:  <b>{{ listing['area_code'] }}</b></p></div>
+	<article>
+      <div><h3><b>{{ listing['name'] }}</b></h3></div>
+	  <div class="img"><img src="{{ listing['image_url'] }}">
+      <div class="tips"><p><i>"{{ listing['tip'] }}"</i></p></div>
+      <div class="score"><p>Composite:  <b>{{ listing['composite'] }}</b></p></div>
+	</div>
+
+	<div class="w3-light-grey w3-round-xlarge">
+  <div class="w3-green w3-round-xlarge" style="height:24px;width:{{ listing['composite'] }}%">{{ listing['composite'] }}</div>
+</div><br>
+
+      <div><p>{{ listing['location'] }}</p></div>
+      <div><p>{{ listing['phone_num'] }}</p></div>
+      <div><p>Total reviews:<b>   {{ listing['total_reviews'] }}</b></p></div>
 	  <p>---------------------------------------</p>
+	{% for category in listing['categories'] %}
+		<tr><td><b> {{ category }} </b></td></tr>
+	{% endfor %}
+	
+      <div><p>Price range:  <b>{{ listing['price_range'] }}</b></p></div> 
+		</article>
       {% endfor %}
+	</section>
           <hr>
         </div>
         </div>
@@ -173,6 +185,6 @@
 
     <!-- Custom scripts for this template -->
     <script src="/static/js/new-age.min.js"></script>
-
+	<script type="text/javascript" src="../static/js/custom.js"></script>
   </body>
 </html>
